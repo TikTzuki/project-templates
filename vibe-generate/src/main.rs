@@ -11,7 +11,9 @@ use dialoguer::Select;
 use include_dir::{include_dir, Dir};
 
 use cli::Cli;
-use scaffold::{list_templates, list_templates_embedded, resolve_template_dir, scaffold, scaffold_embedded};
+use scaffold::{
+    list_templates, list_templates_embedded, resolve_template_dir, scaffold, scaffold_embedded,
+};
 
 /// All templates are embedded at compile time so the binary is self-contained.
 static EMBEDDED_TEMPLATES: Dir = include_dir!("$CARGO_MANIFEST_DIR/../templates");

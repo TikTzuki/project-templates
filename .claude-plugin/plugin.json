@@ -1,0 +1,17 @@
+{
+  "name": "vibe-generate",
+  "version": "0.1.0",
+  "description": "Scaffold new projects from curated boilerplate templates using the vibe-generate CLI",
+  "author": {
+    "name": "tiktuzki",
+    "url": "https://www.tiktuzki.com"
+  },
+  "repository": "https://github.com/TikTzuki/project-templates",
+  "license": "MIT",
+  "keywords": [
+    "scaffold",
+    "template",
+    "generator",
+    "boilerplate"
+  ]
+}

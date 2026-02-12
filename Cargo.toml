@@ -1,3 +1,5 @@
 [workspace]
-members = ["generators"]
+members = ["vibe-generate"]
 resolver = "2"
+authors = ["TikTuzki"]
+license = "MIT/Apache-2.0"

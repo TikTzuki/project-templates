@@ -12,21 +12,27 @@ A template-based monorepo for scaffolding new projects. Pick a template, run the
 
 ## Installation
 
-### Install via cargo (from git)
+Grab the latest binary from [GitHub Releases](https://github.com/tiktuzki/project-templates/releases/latest):
 
 ```bash
-cargo install --git https://github.com/tiktuzki/project-templates vibe-generate
+# macOS (Apple Silicon)
+curl -fsSL https://github.com/tiktuzki/project-templates/releases/latest/download/vibe-generate-aarch64-apple-darwin.tar.gz | tar xz
+sudo mv vibe-generate /usr/local/bin/
+
+# macOS (Intel)
+curl -fsSL https://github.com/tiktuzki/project-templates/releases/latest/download/vibe-generate-x86_64-apple-darwin.tar.gz | tar xz
+sudo mv vibe-generate /usr/local/bin/
+
+# Linux (x86_64)
+curl -fsSL https://github.com/tiktuzki/project-templates/releases/latest/download/vibe-generate-x86_64-unknown-linux-gnu.tar.gz | tar xz
+sudo mv vibe-generate /usr/local/bin/
+
+# Linux (aarch64)
+curl -fsSL https://github.com/tiktuzki/project-templates/releases/latest/download/vibe-generate-aarch64-unknown-linux-gnu.tar.gz | tar xz
+sudo mv vibe-generate /usr/local/bin/
 ```
 
-This installs a self-contained `vibe-generate` binary with all templates embedded.
-
-### Build from source
-
-```bash
-git clone https://github.com/tiktuzki/project-templates
-cd project-templates
-cargo install --path generators
-```
+On Windows, download `vibe-generate-x86_64-pc-windows-msvc.zip` from the releases page and add it to your PATH.
 
 ## Usage
 
@@ -43,21 +49,22 @@ vibe-generate --template nextjs --name my-app
 vibe-generate --template rust-1.9 --name my-cli --output-dir ~/projects
 ```
 
-### Claude Code slash command
+### Claude Code plugin
 
-If you use [Claude Code](https://docs.anthropic.com/en/docs/claude-code), copy the custom command to enable `/scaffold`:
+Install as a [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin to get the `/vibe-generate:new` slash
+command:
 
-```bash
-mkdir -p ~/.claude/commands
-cp .claude-commands/scaffold.md ~/.claude/commands/scaffold.md
+```
+/plugin marketplace add tiktuzki/project-templates
+/plugin install vibe-generate@tiktuzki/project-templates
 ```
 
 Then from any Claude Code session:
 
 ```
-/scaffold nextjs my-app
-/scaffold rust-1.9 my-cli
-/scaffold java-25 my-service ~/projects
+/vibe-generate:new nextjs my-app
+/vibe-generate:new rust-1.9 my-cli
+/vibe-generate:new java-25 my-service ~/projects
 ```
 
 ## How it works
@@ -67,17 +74,6 @@ your project name. Templates are embedded into the binary at compile time using 
 is fully self-contained.
 
 When running from the repo (via `cargo run`), filesystem templates are used directly for faster iteration.
-
-## Project Structure
-
-```
-├── templates/
-│   ├── rust-1.9/          # Rust workspace starter
-│   ├── nextjs/            # Next.js + tRPC starter
-│   └── java-25/           # Spring Boot multi-module starter
-├── generators/            # Rust CLI tool (vibe-generate)
-└── README.md
-```
 
 ## Adding a new template
 
@@ -89,6 +85,3 @@ When running from the repo (via `cargo run`), filesystem templates are used dire
 ## Requirements
 
 - **Generator CLI**: Rust 1.70+ and Cargo
-- **Rust templates**: Rust 1.85+
-- **Next.js template**: Node.js 20+ and npm
-- **Java template**: Java 25+ and Gradle 9.3+
