@@ -7,9 +7,9 @@
 A single binary that scaffolds production-ready projects from opinionated, best-practice templates — with built-in
 AI-assisted development support.
 
-[![Release](https://img.shields.io/github/v/release/tiktuzki/project-templates?style=flat-square&color=blue)](https://github.com/tiktuzki/project-templates/releases/latest)
+[![Release](https://img.shields.io/github/v/release/tiktzuki/project-templates?style=flat-square&color=blue)](https://github.com/TikTzuki/project-templates/releases/latest)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square)](LICENSE-APACHE)
-[![Stars](https://img.shields.io/github/stars/tiktuzki/project-templates?style=flat-square)](https://github.com/tiktuzki/project-templates/stargazers)
+[![Stars](https://img.shields.io/github/stars/TikTzuki/project-templates?style=flat-square)](https://github.com/TikTzuki/project-templates/stargazers)
 
 [Install](#install) &bull; [Templates](#templates) &bull; [Usage](#usage) &bull; [Add Your Own](#add-a-template)
 &bull; [Claude Code Plugin](#claude-code-plugin)
@@ -48,18 +48,18 @@ use in production.
 
 ## Install
 
-Grab the latest binary from [GitHub Releases](https://github.com/tiktuzki/project-templates/releases/latest):
+Grab the latest binary from [GitHub Releases](https://github.com/TikTzuki/project-templates/releases/latest):
 
 <details>
 <summary><b>macOS</b></summary>
 
 ```bash
 # Apple Silicon (M1/M2/M3/M4)
-curl -fsSL https://github.com/tiktuzki/project-templates/releases/latest/download/vibe-generate-aarch64-apple-darwin.tar.gz | tar xz
+curl -fsSL https://github.com/TikTzuki/project-templates/releases/latest/download/vibe-generate-aarch64-apple-darwin.tar.gz | tar xz
 sudo mv vibe-generate /usr/local/bin/
 
 # Intel
-curl -fsSL https://github.com/tiktuzki/project-templates/releases/latest/download/vibe-generate-x86_64-apple-darwin.tar.gz | tar xz
+curl -fsSL https://github.com/TikTzuki/project-templates/releases/latest/download/vibe-generate-x86_64-apple-darwin.tar.gz | tar xz
 sudo mv vibe-generate /usr/local/bin/
 ```
 
@@ -70,11 +70,11 @@ sudo mv vibe-generate /usr/local/bin/
 
 ```bash
 # x86_64
-curl -fsSL https://github.com/tiktuzki/project-templates/releases/latest/download/vibe-generate-x86_64-unknown-linux-gnu.tar.gz | tar xz
+curl -fsSL https://github.com/TikTzuki/project-templates/releases/latest/download/vibe-generate-x86_64-unknown-linux-gnu.tar.gz | tar xz
 sudo mv vibe-generate /usr/local/bin/
 
 # aarch64
-curl -fsSL https://github.com/tiktuzki/project-templates/releases/latest/download/vibe-generate-aarch64-unknown-linux-gnu.tar.gz | tar xz
+curl -fsSL https://github.com/TikTzuki/project-templates/releases/latest/download/vibe-generate-aarch64-unknown-linux-gnu.tar.gz | tar xz
 sudo mv vibe-generate /usr/local/bin/
 ```
 
@@ -84,7 +84,7 @@ sudo mv vibe-generate /usr/local/bin/
 <summary><b>Windows</b></summary>
 
 Download `vibe-generate-x86_64-pc-windows-msvc.zip` from
-the [releases page](https://github.com/tiktuzki/project-templates/releases/latest), extract it, and add the directory to
+the [releases page](https://github.com/TikTzuki/project-templates/releases/latest), extract it, and add the directory to
 your `PATH`.
 
 </details>
@@ -93,7 +93,7 @@ your `PATH`.
 <summary><b>Build from source</b></summary>
 
 ```bash
-git clone https://github.com/tiktuzki/project-templates.git
+git clone https://github.com/TikTzuki/project-templates.git
 cd project-templates
 cargo install --path vibe-generate
 ```
