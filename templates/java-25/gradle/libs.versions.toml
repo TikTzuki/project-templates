@@ -1,0 +1,100 @@
+[versions]
+commons-codec = "1.18.0"
+commons-collections = "4.4"
+commons-lang3 = "3.17.0"
+guava = "33.5.0-jre"
+jackson = "2.19.2"
+jakarta-ee-bom = "10.0.0"
+jetbrains-annotations = "26.0.2"
+junit = "5.11.4"
+junit-platform-launcher = "1.11.4"
+logback = "1.5.16"
+lombok = "1.18.42"
+mapstruct = "1.6.3"
+r2dbc-postgresql = "1.1.1.RELEASE"
+slf4j = "2.0.17"
+spring-boot = "4.0.2"
+spring-dependency-management = "1.1.7"
+spring-doc = "2.8.11"
+spotless = "8.2.1"
+swagger = "2.2.35"
+
+[libraries]
+aspectj-weaver = { module = "org.aspectj:aspectjweaver" }
+aspectj-rt = { module = "org.aspectj:aspectjrt" }
+
+commons-codec = { module = "commons-codec:commons-codec", version.ref = "commons-codec" }
+commons-collections = { module = "org.apache.commons:commons-collections4", version.ref = "commons-collections" }
+commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang3" }
+
+guava = { module = "com.google.guava:guava", version.ref = "guava" }
+
+jackson-annotations = { module = "com.fasterxml.jackson.core:jackson-annotations" }
+jackson-blackbird = { module = "com.fasterxml.jackson.module:jackson-module-blackbird" }
+jackson-bom = { module = "com.fasterxml.jackson:jackson-bom", version.ref = "jackson" }
+jackson-core = { module = "com.fasterxml.jackson.core:jackson-core" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind" }
+jackson-datatype-jdk8 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jdk8" }
+jackson-datatype-jsr310 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" }
+jackson-module-parameter-names = { module = "com.fasterxml.jackson.module:jackson-module-parameter-names" }
+
+jakarta-annotation-api = { module = "jakarta.annotation:jakarta.annotation-api" }
+jakarta-ee-bom = { module = "jakarta.platform:jakarta.jakartaee-bom", version.ref = "jakarta-ee-bom" }
+jakarta-validation = { module = "jakarta.validation:jakarta.validation-api" }
+
+jetbrains-annotations = { module = "org.jetbrains:annotations", version.ref = "jetbrains-annotations" }
+
+junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit-platform-launcher" }
+
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+
+mapstruct = { module = "org.mapstruct:mapstruct", version.ref = "mapstruct" }
+mapstruct-processor = { module = "org.mapstruct:mapstruct-processor", version.ref = "mapstruct" }
+
+r2dbc-postgresql = { module = "org.postgresql:r2dbc-postgresql", version.ref = "r2dbc-postgresql" }
+
+reactor-core = { module = "io.projectreactor:reactor-core" }
+
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+
+spring-aop = { module = "org.springframework:spring-aop" }
+spring-boot = { module = "org.springframework.boot:spring-boot" }
+spring-boot-autoconfigure = { module = "org.springframework.boot:spring-boot-autoconfigure" }
+spring-boot-configuration-processor = { module = "org.springframework.boot:spring-boot-configuration-processor", version.ref = "spring-boot" }
+spring-boot-dependencies = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "spring-boot" }
+spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter" }
+spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+spring-boot-actuator = { module = "org.springframework.boot:spring-boot-actuator" }
+spring-boot-starter-r2dbc = { module = "org.springframework.boot:spring-boot-starter-data-r2dbc" }
+spring-boot-starter-security = { module = "org.springframework.boot:spring-boot-starter-security" }
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+spring-boot-starter-validation = { module = "org.springframework.boot:spring-boot-starter-validation" }
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
+spring-boot-starter-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux" }
+spring-boot-starter-oauth2-resource-server = { module = "org.springframework.boot:spring-boot-starter-oauth2-resource-server" }
+spring-context = { module = "org.springframework:spring-context" }
+spring-core = { module = "org.springframework:spring-core" }
+spring-data-commons = { module = "org.springframework.data:spring-data-commons" }
+spring-data-jpa = { module = "org.springframework.data:spring-data-jpa" }
+spring-data-r2dbc = { module = "org.springframework.data:spring-data-r2dbc" }
+spring-security-config = { module = "org.springframework.security:spring-security-config" }
+spring-security-core = { module = "org.springframework.security:spring-security-core" }
+spring-security-oauth2-jose = { module = "org.springframework.security:spring-security-oauth2-jose" }
+spring-security-oauth2-resource-server = { module = "org.springframework.security:spring-security-oauth2-resource-server" }
+spring-security-test = { module = "org.springframework.security:spring-security-test" }
+spring-security-web = { module = "org.springframework.security:spring-security-web" }
+spring-web = { module = "org.springframework:spring-web" }
+spring-webflux = { module = "org.springframework:spring-webflux" }
+springdoc-openapi-bom = { module = "org.springdoc:springdoc-openapi-bom", version.ref = "spring-doc" }
+springdoc-openapi-starter-webflux-ui = { module = "org.springdoc:springdoc-openapi-starter-webflux-ui" }
+reactor-netty-http = { module = "io.projectreactor.netty:reactor-netty-http" }
+
+[bundles]
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "spring-dependency-management" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }

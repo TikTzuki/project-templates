@@ -1,0 +1,7 @@
+dependencies {
+    implementation platform(project(":{{project-name}}-platform"))
+
+    implementation libs.spring.boot.autoconfigure
+
+    testImplementation libs.spring.boot.starter.test
+}

@@ -1,0 +1,78 @@
+plugins {
+    alias(libs.plugins.spotless)
+    alias(libs.plugins.spring.boot) apply false
+    alias(libs.plugins.spring.dependency.management) apply false
+}
+
+allprojects {
+    group = property('group')
+    version = property('version')
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    if (!project.name.endsWith('-platform')) {
+        apply plugin: 'java-library'
+
+        java {
+            sourceCompatibility = JavaVersion.toVersion(property('sourceCompatibility'))
+            targetCompatibility = JavaVersion.toVersion(property('targetCompatibility'))
+            withSourcesJar()
+        }
+
+        compileJava {
+            options.encoding = 'UTF-8'
+            options.compilerArgs.add('-parameters')
+        }
+
+        compileTestJava {
+            options.encoding = 'UTF-8'
+        }
+
+        test {
+            useJUnitPlatform()
+        }
+    }
+
+    apply plugin: 'maven-publish'
+    apply plugin: 'com.diffplug.spotless'
+    spotless {
+        java {
+            target 'src/**/*.java'
+            importOrder()
+            removeUnusedImports()
+            googleJavaFormat('1.34.1')
+            endWithNewline()
+        }
+    }
+
+    afterEvaluate {
+        publishing {
+            publications {
+                if (plugins.hasPlugin('java-library')) {
+                    maven(MavenPublication) {
+                        from components.java
+                    }
+                } else if (plugins.hasPlugin('java-platform')) {
+                    maven(MavenPublication) {
+                        from components.javaPlatform
+                    }
+                }
+            }
+
+            repositories {
+                maven {
+                    name = "GitHub"
+                    url = uri("https://maven.pkg.github.com/{{MyOrg}}/{{project-name}}")
+                    credentials {
+                        username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                        password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+                    }
+                }
+            }
+        }
+    }
+}

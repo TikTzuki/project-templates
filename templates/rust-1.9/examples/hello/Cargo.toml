@@ -1,0 +1,14 @@
+[package]
+name = "example-hello"
+publish = false
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+project-core = { workspace = true }
+
+[lints]
+workspace = true

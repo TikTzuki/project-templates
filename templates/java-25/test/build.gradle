@@ -1,0 +1,5 @@
+dependencies {
+    implementation platform(project(":{{project-name}}-platform"))
+
+    api libs.spring.boot.starter.test
+}

@@ -1,0 +1,3 @@
+[workspace]
+members = ["generators"]
+resolver = "2"

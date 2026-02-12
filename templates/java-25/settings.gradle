@@ -1,0 +1,9 @@
+rootProject.name = '{{project-name}}'
+
+rootDir.eachDir { dir ->
+    if (new File(dir, 'build.gradle').exists()) {
+        def moduleName = "${rootProject.name}-${dir.name}"
+        include(":${moduleName}")
+        project(":${moduleName}").projectDir = dir
+    }
+}
