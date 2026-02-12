@@ -121,8 +121,8 @@ vibe-generate ships as a [Claude Code](https://docs.anthropic.com/en/docs/claude
 projects directly from your AI coding session:
 
 ```
-/plugin marketplace add tiktuzki/project-templates
-/plugin install vibe-generate@tiktuzki/project-templates
+/plugin marketplace add TikTzuki/project-templates
+/plugin install vibe-generate@TikTzuki/project-templates
 ```
 
 Then use the `/new` command:

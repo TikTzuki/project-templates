@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "vibe-generate",
-      "source": ".",
+      "source": "./",
       "description": "Scaffold new projects from curated boilerplate templates (Next.js 16, Rust, Spring Boot 4.0)",
       "version": "1.0.0",
       "author": {
