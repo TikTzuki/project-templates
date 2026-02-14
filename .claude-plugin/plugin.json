@@ -1,6 +1,6 @@
 {
   "name": "vibe-generate",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "Scaffold new projects from curated boilerplate templates using the vibe-generate CLI",
   "author": {
     "name": "tiktuzki",
