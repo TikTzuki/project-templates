@@ -12,11 +12,15 @@ use include_dir::{include_dir, Dir};
 
 use cli::Cli;
 use scaffold::{
-    list_templates, list_templates_embedded, resolve_template_dir, scaffold, scaffold_embedded,
+    copy_skills, list_templates, list_templates_embedded, resolve_template_dir, scaffold,
+    scaffold_embedded,
 };
 
 /// All templates are embedded at compile time so the binary is self-contained.
 static EMBEDDED_TEMPLATES: Dir = include_dir!("$CARGO_MANIFEST_DIR/../templates");
+
+/// Skills are also embedded so they can be copied into generated projects.
+static EMBEDDED_SKILLS: Dir = include_dir!("$CARGO_MANIFEST_DIR/../skills");
 
 /// Locate the `templates/` directory on the filesystem (for local development).
 fn find_templates_root() -> Option<PathBuf> {
@@ -108,6 +112,8 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
         green.apply_to(&template_name),
     );
 
+    let dest = output_dir.join(&args.name);
+
     match &source {
         TemplateSource::Filesystem(root) => {
             let template_dir = resolve_template_dir(root, &template_name);
@@ -117,6 +123,9 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
             scaffold_embedded(&EMBEDDED_TEMPLATES, &template_name, &output_dir, &args.name)?;
         }
     }
+
+    // Copy skills into .claude/skills/ inside the generated project.
+    copy_skills(&EMBEDDED_SKILLS, &dest)?;
 
     println!(
         "\n{} Project {} created at {}/{}",

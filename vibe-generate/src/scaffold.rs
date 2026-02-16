@@ -113,6 +113,13 @@ fn replace_placeholders(root: &Path, project_name: &str) -> io::Result<()> {
     Ok(())
 }
 
+/// Copy embedded skills into `<project_dir>/.claude/skills/`.
+pub fn copy_skills(embedded_skills: &Dir, project_dir: &Path) -> io::Result<()> {
+    let skills_dest = project_dir.join(".claude").join("skills");
+    extract_dir(embedded_skills, &skills_dest)?;
+    Ok(())
+}
+
 /// Discover available templates by listing sub-directories of `templates_root`.
 pub fn list_templates(templates_root: &Path) -> io::Result<Vec<String>> {
     let mut templates: Vec<String> = Vec::new();
