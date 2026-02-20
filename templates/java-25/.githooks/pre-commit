@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "Running spotlessCheck..."
+./gradlew spotlessCheck --quiet
+
+echo "Pre-commit checks passed."
