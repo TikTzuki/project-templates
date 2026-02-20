@@ -12,9 +12,14 @@ out/
 
 # Environment
 .env
+.env.*
 
 # Java
 *.class
 *.jar
 *.war
 hs_err_pid*
+
+# OS
+.DS_Store
+Thumbs.db

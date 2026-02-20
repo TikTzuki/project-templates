@@ -1,8 +1,33 @@
-/target
+# Rust
+target/
 Cargo.lock
+
+# IDE
+.idea/
 *.iml
-.idea
-.vscode
-target
-.nvim
+.vscode/
+*.swp
+.nvim/
+*.swo
+
+# Docker
+.docker
+
+# Environment
 .env
+.env.*
+
+# Logs
+logs/
+
+# Data
+data/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Profiling / debugging
+perf.data
+perf.data.old
+flamegraph.svg

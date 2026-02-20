@@ -11,6 +11,9 @@ edition = "2024"
 rust-version = "1.9"
 authors = ["Your Name"]
 license = "MIT/Apache-2.0"
+homepage = ""
+repository = ""
+exclude = []
 
 [workspace.lints]
 rust.missing_debug_implementations = "warn"
