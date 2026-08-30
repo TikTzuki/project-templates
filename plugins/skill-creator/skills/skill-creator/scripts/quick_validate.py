@@ -7,9 +7,56 @@ import re
 import sys
 from pathlib import Path
 
-import yaml
-
 MAX_SKILL_NAME_LENGTH = 64
+
+
+class FrontmatterError(ValueError):
+    """Raised when the frontmatter block cannot be parsed."""
+
+
+def parse_frontmatter(text):
+    """Parse the small subset of YAML that SKILL.md frontmatter uses.
+
+    Skill frontmatter is a flat block of `key: value` pairs, so a full YAML
+    parser is not needed -- avoiding it keeps this script dependency-free on a
+    stock Python. Values may span multiple lines (indented continuations, or a
+    `{...}` / `[...]` block); every value is returned as a string.
+    """
+    entries = {}
+    key = None
+    buffer = []
+
+    def flush():
+        if key is None:
+            return
+        value = " ".join(part.strip() for part in buffer if part.strip())
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+            value = value[1:-1]
+        entries[key] = value
+
+    for line in text.splitlines():
+        if not line.strip():
+            buffer.append("")
+            continue
+
+        match = re.match(r"^([A-Za-z_][A-Za-z0-9_-]*):(.*)$", line)
+        if match and not line[0].isspace():
+            flush()
+            key = match.group(1)
+            rest = match.group(2).strip()
+            # `>` and `|` introduce a block scalar; the text follows underneath.
+            buffer = [] if rest in (">", "|", ">-", "|-") else [rest]
+        elif key is not None:
+            buffer.append(line)
+        else:
+            raise FrontmatterError(f"expected 'key: value', got: {line.strip()!r}")
+
+    flush()
+
+    if not entries:
+        raise FrontmatterError("frontmatter is empty")
+
+    return entries
 
 
 def validate_skill(skill_path):
@@ -31,13 +78,21 @@ def validate_skill(skill_path):
     frontmatter_text = match.group(1)
 
     try:
-        frontmatter = yaml.safe_load(frontmatter_text)
-        if not isinstance(frontmatter, dict):
-            return False, "Frontmatter must be a YAML dictionary"
-    except yaml.YAMLError as e:
+        frontmatter = parse_frontmatter(frontmatter_text)
+    except FrontmatterError as e:
         return False, f"Invalid YAML in frontmatter: {e}"
 
-    allowed_properties = {"name", "description", "license", "allowed-tools", "metadata"}
+    allowed_properties = {
+        "name",
+        "description",
+        "license",
+        "allowed-tools",
+        "argument-hint",
+        "disable-model-invocation",
+        "homepage",
+        "metadata",
+        "model",
+    }
 
     unexpected_keys = set(frontmatter.keys()) - allowed_properties
     if unexpected_keys:

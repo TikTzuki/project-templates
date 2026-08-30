@@ -89,22 +89,6 @@
       "author": {
         "name": "tiktuzki"
       }
-    },
-    {
-      "name": "openclaw-agent",
-      "source": "./plugins/openclaw-agent",
-      "description": "Configure OpenClaw AI agents: system prompt architecture, bootstrap files, prompt modes, and workspace safety",
-      "version": "1.0.0",
-      "category": "agents",
-      "keywords": [
-        "openclaw",
-        "agent",
-        "bootstrap",
-        "prompt"
-      ],
-      "author": {
-        "name": "tiktuzki"
-      }
     }
   ]
 }

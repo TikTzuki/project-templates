@@ -27,7 +27,7 @@ Add the marketplace once, then install whichever plugins you want:
 /plugin install vibe-generate@senior-architect
 ```
 
-Each plugin is independent — install one, install all six, uninstall any of them without touching the rest.
+Each plugin is independent — install one, install all five, uninstall any of them without touching the rest.
 
 ## Plugins
 
@@ -38,7 +38,6 @@ Each plugin is independent — install one, install all six, uninstall any of th
 | **`gog`**            | Gmail, Calendar, Drive, Contacts, Sheets, and Docs from the terminal                               | `gog`               |
 | **`docflu`**         | Sync Docusaurus markdown to Confluence, Google Docs, or Notion — diagrams included                 | `docflu`, `node`    |
 | **`skill-creator`**  | Create, structure, validate, and package Agent Skills                                              | —                   |
-| **`openclaw-agent`** | Configure OpenClaw agents: prompt architecture, bootstrap files, workspace safety                  | —                   |
 
 Install any of them the same way:
 
@@ -179,8 +178,7 @@ senior-architect/
 │   ├── tmux/
 │   ├── gog/
 │   ├── docflu/
-│   ├── skill-creator/
-│   └── openclaw-agent/
+│   └── skill-creator/
 ├── crates/
 │   └── vibe-generate/       # Rust CLI behind the vibe-generate plugin
 │       └── src/
