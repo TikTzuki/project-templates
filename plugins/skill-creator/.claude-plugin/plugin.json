@@ -1,0 +1,17 @@
+{
+  "name": "skill-creator",
+  "version": "1.0.0",
+  "description": "Create, structure, validate, and package Agent Skills with scripts, references, and assets",
+  "author": {
+    "name": "tiktuzki",
+    "url": "https://www.tiktuzki.com"
+  },
+  "homepage": "https://github.com/TikTzuki/senior-architect/tree/main/plugins/skill-creator",
+  "repository": "https://github.com/TikTzuki/senior-architect",
+  "license": "Apache-2.0",
+  "keywords": [
+    "skills",
+    "authoring",
+    "packaging"
+  ]
+}

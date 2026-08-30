@@ -1,0 +1,19 @@
+{
+  "name": "docflu",
+  "version": "1.0.0",
+  "description": "Sync Docusaurus markdown docs to Confluence, Google Docs, or Notion with the docflu CLI, including diagram conversion",
+  "author": {
+    "name": "tiktuzki",
+    "url": "https://www.tiktuzki.com"
+  },
+  "homepage": "https://github.com/TikTzuki/senior-architect/tree/main/plugins/docflu",
+  "repository": "https://github.com/TikTzuki/senior-architect",
+  "license": "Apache-2.0",
+  "keywords": [
+    "docs",
+    "confluence",
+    "notion",
+    "docusaurus",
+    "sync"
+  ]
+}

@@ -1,15 +1,107 @@
 {
-  "name": "vibe-generate-marketplace",
+  "name": "senior-architect",
   "owner": {
     "name": "tiktuzki",
     "email": "tiktuzki@gmail.com"
   },
+  "metadata": {
+    "description": "A marketplace of Claude Code plugins for scaffolding projects and driving day-to-day developer tooling",
+    "version": "1.0.0"
+  },
   "plugins": [
     {
       "name": "vibe-generate",
-      "source": "./",
-      "description": "Scaffold new projects from curated boilerplate templates (Next.js 16, Rust, Spring Boot 4.0)",
-      "version": "1.0.2",
+      "source": "./plugins/vibe-generate",
+      "description": "Scaffold production-ready projects from curated boilerplate templates (Next.js 16, Rust 2024, Spring Boot 4.0)",
+      "version": "1.0.0",
+      "category": "scaffolding",
+      "keywords": [
+        "scaffold",
+        "template",
+        "generator",
+        "boilerplate"
+      ],
+      "author": {
+        "name": "tiktuzki"
+      }
+    },
+    {
+      "name": "tmux",
+      "source": "./plugins/tmux",
+      "description": "Remote-control tmux sessions to drive interactive CLIs by sending keystrokes and scraping pane output",
+      "version": "1.0.0",
+      "category": "terminal",
+      "keywords": [
+        "tmux",
+        "terminal",
+        "automation",
+        "cli"
+      ],
+      "author": {
+        "name": "tiktuzki"
+      }
+    },
+    {
+      "name": "gog",
+      "source": "./plugins/gog",
+      "description": "Google Workspace from the terminal: Gmail, Calendar, Drive, Contacts, Sheets, and Docs via the gog CLI",
+      "version": "1.0.0",
+      "category": "productivity",
+      "keywords": [
+        "google",
+        "gmail",
+        "calendar",
+        "drive",
+        "workspace"
+      ],
+      "author": {
+        "name": "tiktuzki"
+      }
+    },
+    {
+      "name": "docflu",
+      "source": "./plugins/docflu",
+      "description": "Sync Docusaurus markdown docs to Confluence, Google Docs, or Notion with the docflu CLI",
+      "version": "1.0.0",
+      "category": "documentation",
+      "keywords": [
+        "docs",
+        "confluence",
+        "notion",
+        "docusaurus",
+        "sync"
+      ],
+      "author": {
+        "name": "tiktuzki"
+      }
+    },
+    {
+      "name": "skill-creator",
+      "source": "./plugins/skill-creator",
+      "description": "Create, structure, validate, and package Agent Skills with scripts, references, and assets",
+      "version": "1.0.0",
+      "category": "authoring",
+      "keywords": [
+        "skills",
+        "authoring",
+        "packaging"
+      ],
+      "author": {
+        "name": "tiktuzki"
+      }
+    },
+    {
+      "name": "openclaw-agent",
+      "source": "./plugins/openclaw-agent",
+      "description": "Configure OpenClaw AI agents: system prompt architecture, bootstrap files, prompt modes, and workspace safety",
+      "version": "1.0.0",
+      "category": "agents",
+      "keywords": [
+        "openclaw",
+        "agent",
+        "bootstrap",
+        "prompt"
+      ],
       "author": {
         "name": "tiktuzki"
       }

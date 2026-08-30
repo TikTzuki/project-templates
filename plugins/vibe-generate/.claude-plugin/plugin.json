@@ -1,0 +1,18 @@
+{
+  "name": "vibe-generate",
+  "version": "1.0.0",
+  "description": "Scaffold production-ready projects from curated boilerplate templates (Next.js 16, Rust 2024, Spring Boot 4.0) using the vibe-generate CLI",
+  "author": {
+    "name": "tiktuzki",
+    "url": "https://www.tiktuzki.com"
+  },
+  "homepage": "https://github.com/TikTzuki/senior-architect/tree/main/plugins/vibe-generate",
+  "repository": "https://github.com/TikTzuki/senior-architect",
+  "license": "Apache-2.0",
+  "keywords": [
+    "scaffold",
+    "template",
+    "generator",
+    "boilerplate"
+  ]
+}

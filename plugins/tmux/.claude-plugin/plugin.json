@@ -1,0 +1,18 @@
+{
+  "name": "tmux",
+  "version": "1.0.0",
+  "description": "Remote-control tmux sessions to drive interactive CLIs by sending keystrokes and scraping pane output",
+  "author": {
+    "name": "tiktuzki",
+    "url": "https://www.tiktuzki.com"
+  },
+  "homepage": "https://github.com/TikTzuki/senior-architect/tree/main/plugins/tmux",
+  "repository": "https://github.com/TikTzuki/senior-architect",
+  "license": "Apache-2.0",
+  "keywords": [
+    "tmux",
+    "terminal",
+    "automation",
+    "cli"
+  ]
+}
